@@ -1,0 +1,14 @@
+{
+  "name": "catalyst",
+  "version": "0.1.0",
+  "description": "Graded findings on what compounds, supplements and nutrients do in the body: each with its grade, the quoted sentence, the paper and a permalink. Read-only, no account.",
+  "author": {
+    "name": "Catalyst",
+    "email": "hello@catalystproject.ai",
+    "url": "https://catalystproject.ai"
+  },
+  "homepage": "https://catalystproject.ai/connect",
+  "repository": "https://github.com/colorcatalyst/catalyst-mcp",
+  "license": "MIT",
+  "keywords": ["biochemistry", "supplements", "nutrition", "evidence", "pubmed", "mcp"]
+}
