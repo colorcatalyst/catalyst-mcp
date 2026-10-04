@@ -1,0 +1,32 @@
+{
+  "name": "catalyst-evidence-graph",
+  "displayName": "Catalyst Evidence Graph",
+  "description": "Graded findings on what compounds, supplements and nutrients do in the body, for Copilot agent mode: each with its grade, the quoted sentence, the paper and a permalink.",
+  "version": "0.1.0",
+  "publisher": "catalystproject",
+  "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://catalystproject.ai/connect",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colorcatalyst/catalyst-mcp"
+  },
+  "bugs": {
+    "email": "hello@catalystproject.ai"
+  },
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": ["AI", "Chat", "Data Science", "Other"],
+  "keywords": ["mcp", "biochemistry", "supplements", "nutrition", "evidence", "pubmed", "copilot"],
+  "main": "./extension.js",
+  "activationEvents": ["onStartupFinished"],
+  "contributes": {
+    "mcpServerDefinitionProviders": [
+      {
+        "id": "catalyst.evidenceGraph",
+        "label": "Catalyst evidence graph"
+      }
+    ]
+  }
+}
