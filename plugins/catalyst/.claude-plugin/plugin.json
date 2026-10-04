@@ -7,8 +7,11 @@
     "email": "hello@catalystproject.ai",
     "url": "https://catalystproject.ai"
   },
-  "homepage": "https://catalystproject.ai/connect",
+  "homepage": "https://catalystproject.ai",
+  "documentationUrl": "https://catalystproject.ai/connect",
   "privacyPolicyUrl": "https://catalystproject.ai/privacy",
+  "termsOfServiceUrl": "https://catalystproject.ai/terms",
+  "supportUrl": "https://github.com/colorcatalyst/catalyst-mcp/issues",
   "repository": "https://github.com/colorcatalyst/catalyst-mcp",
   "license": "MIT",
   "keywords": ["biochemistry", "supplements", "nutrition", "evidence", "pubmed", "mcp"]
