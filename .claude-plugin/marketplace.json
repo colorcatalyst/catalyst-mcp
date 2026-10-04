@@ -1,0 +1,20 @@
+{
+  "name": "catalyst",
+  "owner": {
+    "name": "Catalyst",
+    "email": "hello@catalystproject.ai"
+  },
+  "metadata": {
+    "description": "Catalyst's graded biochemistry evidence graph for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "catalyst",
+      "source": "./plugins/catalyst",
+      "description": "Graded findings on what compounds, supplements and nutrients do in the body: each with its grade, the quoted sentence, the paper and a permalink.",
+      "version": "0.1.0",
+      "category": "research",
+      "homepage": "https://catalystproject.ai/connect"
+    }
+  ]
+}
