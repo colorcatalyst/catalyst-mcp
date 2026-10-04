@@ -15,16 +15,22 @@ read-only, no account, no key.
 
 ## What an assistant gets
 
-- Graded findings for a compound or an outcome. Every finding carries a grade
-  from A (well established) to F (speculative), computed from the study behind
-  it — never set by hand — plus the verbatim sentence it was drawn from, the
-  paper, the population and dose, and a permalink to check it.
+- Findings for a compound or an outcome. Every finding carries an
+  `evidence_strength` — `strong`, `moderate`, `limited`, `very_limited` or
+  `insufficient` — computed from the study behind it, never set by hand, plus
+  the verbatim sentence it was drawn from, the paper, the population and dose,
+  and a permalink to check it.
 - Relations from reference databases (targets, pathways, reactions), each
   labelled as a hypothesis rather than a reported result.
 
-A grade describes how strong the evidence is. It is not a recommendation, and
-nothing here is medical advice. No tool returns a product, a price or a link to
-buy anything, and no tool ranks what to take.
+Evidence strength describes how well the evidence supports a finding. It is
+not a recommendation, and nothing here is medical advice. No tool returns a
+product, a price or a link to buy anything, and no tool ranks what to take.
+
+**Changed in 0.2.0 (ADR-0103):** tool results report `evidence_strength` as a
+named level and never a letter, and `get_findings` takes an
+`evidence_strength` floor. The `grade` field and the `grade` argument are
+gone; a call that still sends `grade` gets an error naming the replacement.
 
 ## Install
 
@@ -32,7 +38,7 @@ buy anything, and no tool ranks what to take.
 |---|---|
 | **Claude** (web, desktop) | Settings → Connectors → Add custom connector → `https://catalystproject.ai/mcp` |
 | **ChatGPT** | Developer mode → add a custom app/connector with `https://catalystproject.ai/mcp` |
-| **Claude Code** (plugin, adds the server and a skill for presenting grades) | `/plugin marketplace add colorcatalyst/catalyst-mcp` then `/plugin install catalyst@catalyst` |
+| **Claude Code** (plugin, adds the server and a skill for presenting evidence strength) | `/plugin marketplace add colorcatalyst/catalyst-mcp` then `/plugin install catalyst@catalyst` |
 | **Claude Code** (server only) | `claude mcp add --transport http catalyst https://catalystproject.ai/mcp` |
 | **VS Code / GitHub Copilot** | The [Catalyst Evidence Graph](vscode/) extension (VSIX on the releases page), the one-click link on [/connect](https://catalystproject.ai/connect), or `.vscode/mcp.json` below |
 | **Cursor** | [One-click install](https://catalystproject.ai/connect), or `~/.cursor/mcp.json` below |
@@ -54,7 +60,7 @@ VS Code's own file takes a slightly different shape:
 | Path | What it is |
 |---|---|
 | `server.json` | The entry in the [official MCP registry](https://registry.modelcontextprotocol.io) |
-| `.claude-plugin/marketplace.json`, `plugins/catalyst/` | A Claude Code plugin marketplace with one plugin: the server and a `graded-evidence` skill |
+| `.claude-plugin/marketplace.json`, `plugins/catalyst/` | A Claude Code plugin marketplace with one plugin: the server and an `evidence-strength` skill |
 | `gemini-extension.json`, `GEMINI.md` | A Gemini CLI extension |
 | `vscode/` | A VS Code extension that registers the server with Copilot's agent mode |
 
