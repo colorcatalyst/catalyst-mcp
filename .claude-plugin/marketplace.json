@@ -5,14 +5,14 @@
     "email": "hello@catalystproject.ai"
   },
   "metadata": {
-    "description": "Catalyst's graded biochemistry evidence graph for Claude Code."
+    "description": "Catalyst's biochemistry evidence graph for Claude Code, with the strength of the evidence behind every finding."
   },
   "plugins": [
     {
       "name": "catalyst",
       "source": "./plugins/catalyst",
-      "description": "Graded findings on what compounds, supplements and nutrients do in the body: each with its grade, the quoted sentence, the paper and a permalink.",
-      "version": "0.1.0",
+      "description": "Findings on what compounds, supplements and nutrients do in the body: each with the strength of its evidence, the quoted sentence, the paper and a permalink.",
+      "version": "0.2.0",
       "category": "research",
       "homepage": "https://catalystproject.ai/connect"
     }
