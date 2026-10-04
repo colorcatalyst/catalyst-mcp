@@ -30,10 +30,18 @@ all five with their meanings.
 
 ## How to look something up
 
-1. `search_nodes` with the name the person used ("magnesium glycinate",
-   "sleep quality"). It returns ids; it says nothing about effects.
+1. `search_nodes` with the name the person used ("magnesium", "vitamin D",
+   "omega-3", "sleep"). Every hit carries `findings`, the number of findings
+   it has, and hits with findings come first: use the first hit with
+   findings above 0. When `with_findings` is 0, Catalyst has no findings on
+   it yet. Say so, and do not answer from memory as though from Catalyst.
 2. `get_findings` with the id for the study findings about it, each with its
-   evidence strength. To keep only the better-supported ones, pass an
+   evidence strength. Its `summary` lists everything the node has findings
+   about, one row each, with the strongest evidence, the directions and
+   whether they conflict, across all its findings and not only the rows
+   returned. For a question about one thing ("does magnesium help sleep?"),
+   pass `about` with words or an id from `summary`; if nothing matches,
+   that is the answer, and `summary` shows what is covered instead. To keep only the better-supported ones, pass an
    `evidence_strength` floor, for example `evidence_strength: "moderate"`
    returns moderate and strong findings. There is no `grade` argument; a call
    that sends one is refused.
