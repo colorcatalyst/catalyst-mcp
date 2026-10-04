@@ -10,7 +10,11 @@ from memory.
 1. `search_nodes` with the name the person used ("magnesium glycinate",
    "sleep quality"). It returns ids; it says nothing about effects.
 2. `get_findings` with the id for the graded study findings about it.
-3. `get_finding` with a finding id when the person wants one claim explained.
+3. `get_finding` with a finding id when the person wants one claim explained,
+   or before you say anything about why a finding has its grade. Its
+   `grade_reasons` lists every rule that set the grade, and `not_graded_on`
+   lists what the grade does not weigh (pilot status, primary or secondary
+   outcome, effect size). Explain a grade from those, never by guessing.
 4. `get_relations`, `get_reactions` and `reach` return what reference databases
    state. Every row from them is a hypothesis, not a reported result.
 
