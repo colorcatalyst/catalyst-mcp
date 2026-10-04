@@ -1,8 +1,8 @@
 {
   "name": "catalyst-evidence-graph",
   "displayName": "Catalyst Evidence Graph",
-  "description": "Graded findings on what compounds, supplements and nutrients do in the body, for Copilot agent mode: each with its grade, the quoted sentence, the paper and a permalink.",
-  "version": "0.1.0",
+  "description": "Findings on what compounds, supplements and nutrients do in the body, for Copilot agent mode: each with the strength of its evidence, the quoted sentence, the paper and a permalink.",
+  "version": "0.2.0",
   "publisher": "catalystproject",
   "license": "MIT",
   "icon": "icon.png",
