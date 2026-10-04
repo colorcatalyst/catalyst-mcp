@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "ai.catalystproject/evidence-graph",
   "title": "Catalyst evidence graph",
-  "description": "Graded findings on what compounds and supplements do in the body, each with its quote and paper.",
-  "version": "0.1.1",
+  "description": "Findings on what compounds and supplements do in the body, with evidence strength, quote and paper.",
+  "version": "0.2.0",
   "websiteUrl": "https://catalystproject.ai/connect",
   "repository": {
     "url": "https://github.com/colorcatalyst/catalyst-mcp",
