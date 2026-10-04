@@ -1,0 +1,101 @@
+{
+  "name": "catalyst",
+  "version": "0.2.0",
+  "description": "Findings on what compounds, supplements and nutrients do in the body: each with the strength of its evidence, the quoted sentence, the paper and a permalink. Read-only, no account.",
+  "author": {
+    "name": "Catalyst",
+    "email": "hello@catalystproject.ai",
+    "url": "https://catalystproject.ai"
+  },
+  "homepage": "https://catalystproject.ai",
+  "repository": "https://github.com/colorcatalyst/catalyst-mcp",
+  "license": "MIT",
+  "keywords": ["biochemistry", "supplements", "nutrition", "evidence", "pubmed", "mcp"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Catalyst",
+    "shortDescription": "Evidence on what compounds do",
+    "longDescription": "Catalyst answers questions about what supplements, nutrients, drugs and food compounds have been shown to do in the human body, from a curated graph of published studies.\n\nEach finding comes with the strength of its evidence (strong, moderate, limited, very limited or insufficient), the sentence it was taken from, the paper, the population and dose studied, and a link where you can read the quote and the source yourself. The strength is computed from the study's design, population and replication. It is never assigned by hand.\n\nWhat you can ask:\n- What the research says about a compound, such as creatine or caffeine\n- Which compounds have been studied for an outcome, such as falling asleep faster\n- Why a finding's evidence is rated the way it is\n- What a compound can be converted into through known biochemical reactions, and which enzymes do it\n\nWho it is for: anyone who wants to check a claim about a supplement or nutrient against the studies behind it, including students, researchers, clinicians, writers and curious readers.\n\nLimitations: Catalyst describes evidence. It does not give medical advice or recommend taking anything. Coverage is growing and incomplete, so no finding for a question means nothing has been curated yet, not that a compound has no effect. Relations and reactions drawn from reference databases are labelled as hypotheses, not study results. The plugin is read-only, needs no account, and does not store your questions.",
+    "developerName": "Catalyst",
+    "category": "Education & Research",
+    "capabilities": [
+      "Search compounds, outcomes and proteins",
+      "Read study findings with the strength of their evidence",
+      "Explain why a finding's evidence is rated as it is",
+      "List reference-database relations and reactions, labelled as hypotheses",
+      "Trace what a compound can become through known reactions"
+    ],
+    "websiteURL": "https://catalystproject.ai",
+    "supportURL": "https://catalystproject.ai/connect",
+    "privacyPolicyURL": "https://catalystproject.ai/privacy",
+    "termsOfServiceURL": "https://catalystproject.ai/terms",
+    "defaultPrompt": [
+      "What does the research say about creatine?",
+      "Which compounds have been studied for helping people fall asleep faster?",
+      "Does caffeine make you stronger?"
+    ],
+    "brandColor": "#ee5f19",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Summarise the evidence for a supplement",
+              "prompt": "What does the research say about creatine?",
+              "tools_triggered": "search_nodes, get_findings",
+              "expected_behavior": "Finds creatine and lists its study findings, such as increases in lean body mass and in one-repetition maximum strength, each stated with its evidence strength in words (for example, moderate evidence), the quoted sentence or paper, and a permalink. It does not recommend taking creatine."
+            },
+            {
+              "description": "Find the compounds studied for an outcome",
+              "prompt": "Which compounds have been studied for helping people fall asleep faster?",
+              "tools_triggered": "search_nodes, get_findings",
+              "expected_behavior": "Resolves the question to the sleep onset latency outcome and lists the compounds studied against it: melatonin, with moderate evidence from two meta-analyses and very limited evidence from smaller trials, and caffeine, with very limited evidence. Findings at different strengths are reported separately, not merged into one stronger claim."
+            },
+            {
+              "description": "Report findings that disagree",
+              "prompt": "Does caffeine make you stronger?",
+              "tools_triggered": "search_nodes, get_findings",
+              "expected_behavior": "Reports that caffeine increased upper-body strength and one-repetition maximum strength (moderate evidence) and had no detected effect on lower-body strength (moderate evidence), and says the findings differ by muscle group instead of giving a single yes or no."
+            },
+            {
+              "description": "Explain why a finding's evidence is rated as it is",
+              "prompt": "Why is the evidence that melatonin helps people fall asleep faster only moderate?",
+              "tools_triggered": "search_nodes, get_findings, get_finding",
+              "expected_behavior": "Explains the rating from the reasons the tool returns: the finding comes from a meta-analysis of human studies, which can support strong evidence, but no sample size and no effect size with its confidence interval were recorded, so it is capped at moderate. It does not invent other reasons."
+            },
+            {
+              "description": "Trace a compound through known reactions",
+              "prompt": "What can creatine be converted into in the body, and which enzymes are involved?",
+              "tools_triggered": "search_nodes, reach",
+              "expected_behavior": "Lists compounds reachable from creatine through recorded reactions, including phosphocreatine (through creatine kinases such as CKM and CKB) and guanidinoacetate (through GAMT), and says these routes come from reference databases and are hypotheses, not effects measured in people."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Unrelated request. Catalyst has no weather data, so the plugin should not be called; ChatGPT answers some other way or says it cannot.",
+              "prompt": "What's the weather in Portland this weekend?"
+            },
+            {
+              "description": "Creative writing that needs no evidence lookup. The plugin should not be called.",
+              "prompt": "Write me a short poem about autumn leaves."
+            },
+            {
+              "description": "A personal medical decision. Catalyst gives no medical advice and should not be used to decide whether someone stops a prescribed medication; the expected response directs the person to their prescriber.",
+              "prompt": "Should I stop taking my blood pressure medication?"
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "Catalyst does not sell anything or process payments."
+      },
+      "publication": {
+        "release_notes": "First directory release. Read-only access to Catalyst's evidence graph: search, study findings with the strength of their evidence, the reasons behind each rating, reference-database relations and reactions, and reachability through known reactions."
+      }
+    }
+  }
+}
