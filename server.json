@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "ai.catalystproject/evidence-graph",
+  "title": "Catalyst evidence graph",
+  "description": "Graded findings on what compounds and supplements do in the body, each with its quote and paper.",
+  "version": "0.1.1",
+  "websiteUrl": "https://catalystproject.ai/connect",
+  "repository": {
+    "url": "https://github.com/colorcatalyst/catalyst-mcp",
+    "source": "github",
+    "id": "1404664047"
+  },
+  "icons": [
+    {
+      "src": "https://catalystproject.ai/icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://catalystproject.ai/mcp"
+    }
+  ]
+}
