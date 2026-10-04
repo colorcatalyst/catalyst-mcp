@@ -30,6 +30,12 @@ all five with their meanings.
 
 ## How to look something up
 
+For "what does X do?" or "does X affect Y?", call `find_evidence` with the
+substance as `query` and the effect, if any, as `about`. One call resolves
+the name and returns the findings, each with a `citation` you can quote as it
+stands. If it reports no match, Catalyst has no findings on it yet: say so.
+The steps below are for browsing.
+
 1. `search_nodes` with the name the person used ("magnesium", "vitamin D",
    "omega-3", "sleep"). Every hit carries `findings`, the number of findings
    it has, and hits with findings come first: use the first hit with
