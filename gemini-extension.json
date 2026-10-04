@@ -1,0 +1,11 @@
+{
+  "name": "catalyst",
+  "version": "0.1.0",
+  "description": "Graded findings on what compounds, supplements and nutrients do in the body: each with its grade, the quoted sentence, the paper and a permalink.",
+  "mcpServers": {
+    "catalyst": {
+      "httpUrl": "https://catalystproject.ai/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
