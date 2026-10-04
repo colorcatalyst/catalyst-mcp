@@ -8,6 +8,7 @@
     "url": "https://catalystproject.ai"
   },
   "homepage": "https://catalystproject.ai/connect",
+  "privacyPolicyUrl": "https://catalystproject.ai/privacy",
   "repository": "https://github.com/colorcatalyst/catalyst-mcp",
   "license": "MIT",
   "keywords": ["biochemistry", "supplements", "nutrition", "evidence", "pubmed", "mcp"]
