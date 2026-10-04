@@ -2,17 +2,18 @@
 
 Adds [Catalyst](https://catalystproject.ai)'s evidence graph to GitHub Copilot's
 agent mode as an MCP server. Ask about a supplement, nutrient, drug or food
-compound and Copilot can answer from graded findings instead of from memory:
+compound and Copilot can answer from the graph's findings instead of from
+memory:
 
-- every finding with its **grade** (A, well established, to F, speculative),
-  computed from the study behind it;
+- every finding with its **evidence strength** — strong, moderate, limited,
+  very limited or insufficient — computed from the study behind it;
 - the **verbatim sentence** it was drawn from, the **paper**, the population
   and the dose;
 - a **permalink** to the finding, so the claim can be checked.
 
 Connections drawn from reference databases are labelled as hypotheses, never
-as results. A grade describes how strong the evidence is; it is not a
-recommendation and nothing here is medical advice.
+as results. Evidence strength describes how well the evidence supports a
+finding; it is not a recommendation and nothing here is medical advice.
 
 ## Use
 
