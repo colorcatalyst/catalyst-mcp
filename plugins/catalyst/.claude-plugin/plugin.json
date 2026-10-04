@@ -1,7 +1,7 @@
 {
   "name": "catalyst",
-  "version": "0.1.0",
-  "description": "Graded findings on what compounds, supplements and nutrients do in the body: each with its grade, the quoted sentence, the paper and a permalink. Read-only, no account.",
+  "version": "0.2.0",
+  "description": "Findings on what compounds, supplements and nutrients do in the body: each with the strength of its evidence, the quoted sentence, the paper and a permalink. Read-only, no account.",
   "author": {
     "name": "Catalyst",
     "email": "hello@catalystproject.ai",
